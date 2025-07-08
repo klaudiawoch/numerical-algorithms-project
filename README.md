@@ -1,56 +1,74 @@
-# Numerical Methods Analysis and Visualization
+# Numerical Methods Toolkit for Scientific Computation
 
-This project presents a comprehensive analysis and implementation of selected numerical methods using Python. It explores interpolation, approximation, integration, differentiation, and statistical analysis applied to a real-valued function of two variables, F(x, y). The code performs method comparison and visual validation of results, demonstrating practical applications of theoretical algorithms.
+A modular Python-based implementation of core numerical methods — including interpolation, approximation, integration, and differentiation — applied to a bivariate function F(x,y). The project focuses on **transparent implementation, method comparison, and visual verification**, without relying on high-level scientific libraries.
 
->This project was developed as part of a university course on **Numerical Algorithms**. It serves both as a course assignment and as an opportunity to apply and strengthen my programming skills..
+>Originally developed as part of a university course in numerical algorithms, this project has been extended and structured to serve as a practical toolkit for scientific computing and algorithmic validation.
 
 ---
 
-## Project Objectives
+## Key Features
 
-- Apply fundamental numerical methods in a controlled, educational context.
-- Compare the accuracy and behavior of different interpolation, approximation integration and differentiation techniques.
-- Analyze and visualize function behavior and statistical properties based on provided input data.
-- Gain experience in writing scientific code from scratch without using high-level libraries such as `scipy` or `sympy`.
+- Manual implementation of core numerical methods
+
+- Visualization of multidimensional function layers
+
+- Performance and error metric comparison across methods
+
+- Clean structure with documented logic and visual output
+
+- No reliance on scipy, sympy, or machine learning libraries
 
 ---
 
 ## Technologies Used
 
 - **Python 3.10+**
-- **NumPy**
-- **Matplotlib**
-- Built-in `math` library
+- **NumPy** - numerical array operations
+- **Matplotlib** - data visualization
+- Built-in `math` library - for low-level computation
 
->Note: All numerical methods are implemented manually in accordance with the project requirements — *external scientific libraries were restricted*.
+>Note: All numerical logic implemented manually. No high-level numerical libraries allowed due to course constraints - reflecting strong algorithmic understanding.
 
 ---
 
 ## Features & Methods
 
-- **Data preprocessing & visualization**
-  - Visual representation of function values F(x, y) across different y-layers.
-  - Statistical analysis: mean, median, standard deviation.
+### Preprocessing & Visualization
 
-- **Interpolation**
-  - Lagrange polynomial interpolation.
-  - Cubic spline interpolation.
-  - Comparison of interpolation accuracy (MAE, MSE, Max error).
+- Visualization of F(x,y) slices for different y values
 
-- **Function approximation**
-  - Linear and quadratic least squares fitting.
-  - Accuracy analysis using RMSE and R².
-  - Visual overlay of approximation vs original data.
+- Statistical analysis: mean, median, standard deviation per layer
 
-- **Numerical integration**
-  - Trapezoidal method.
-  - Simpson’s rule.
-  - Convergence comparison across different methods and resolutions.
+### Interpolation
 
-- **Numerical differentiation**
-  - Partial derivative with respect to x using finite differences.
-  - Error analysis of derivatives based on sample resolution.
-  - Function monotonicity detection.
+- Lagrange polynomial interpolation
+
+- Cubic spline interpolation
+
+- Accuracy comparison via MAE, MSE, and max error
+
+### Function Approximation
+
+- Linear and quadratic least squares fitting
+
+- Metrics: RMSE, R² score
+
+- Overlay of original vs approximated data
+
+### Numerical Integration
+
+- Trapezoidal rule
+
+- Simpson's rule
+
+- Convergence analysis by step size
+
+### Numerical Differentiation
+- Finite difference approximations of partial derivatives
+
+- Error analysis vs sample resolution
+
+- Monotonicity detection based on sign of derivatives
 
 ---
 
@@ -58,16 +76,34 @@ This project presents a comprehensive analysis and implementation of selected nu
 
 <pre>
 📁 numerical-algorithms-project/
+└── 📁images/ # Generated plots used in report
+    ├── 🖼️plot1.png
+    ├── 🖼️plot2.png
+    └── 🖼️plot3.png
+├── 📄 .gitignore # Files and folders to ignore in Git version control
+├── 📄 data.txt # Input data file (x, y, F(x,y))
 ├── 📄 project.py # Main Python script with all code
-├── 📄 data_140762.txt # Input data file (x, y, F(x,y))
-├── 📄 report.pdf # Full report with plots and method descriptions 
-├── 📄 README.md # This file 
-└── 📄 images/
-    ├── plot1.png
-    ├── plot2.png
-    └── plot3.png
+├── 📄 README.md # This file
+└── 📄 report.pdf # Full report with plots and method descriptions  
 </pre>
 ---
+
+## Sample Input Format
+
+The data.txt file contains tab-separated values in the following format:
+
+```
+x          y      	f(x,y)
+-10.00000 -10.00000 -293.73141
+-9.31034 -10.00000 -184.15177
+...
+```
+
+- Input is expected to be clean and prevalidated
+
+- Function values assumed to be smooth and continuous
+
+- Missing or malformed entries are not automatically handled
 
 ## How to Run
 
@@ -86,11 +122,11 @@ cd numerical-algorithms
 
 `python project.py`
 
->Make sure that the data_140762.txt file is in the same directory as project.py.
+>Make sure that the data.txt file is in the same directory as project.py.
 
 For a detailed description of all methods, visual results, equations, and conclusions, see the full report:
 
-[View Report] (report.pdf)
+[View Report](report.pdf)
 
 The report includes:
 
@@ -103,7 +139,7 @@ The report includes:
 - Methodological insights and performance evaluation
 
 ## Author & Motivation
-This project was created individually as part of my studies in numerical algorithms. My goal was not only to pass the course, but to deepen my understanding of numerical computation by coding everything from scratch. This is one of my first structured technical projects and serves as a checkpoint for future growth in data science and scientific computing.
+A first-year Computer Science student with foundational programming skills and academic exposure to numerical methods. While still exploring various areas of software development, this project demonstrates the ability to implement and analyze mathematical algorithms from scratch. Motivated to build practical experience and deepen understanding of computational techniques through hands-on projects.
 
 ## Limitations
  - No automated tests (not required in scope of the course).
@@ -116,8 +152,11 @@ This project was created individually as part of my studies in numerical algorit
 Here are a few selected plots generated by the script:
 
 ![Plot 1](images/plot1.png)
-![Plot 2](images/plot1.png)
+![Plot 2](images/plot2.png)
 ![Plot 3](images/plot3.png)
 
 ## License
-This project is provided for educational purposes. All code is open-source and free to use.
+Licensed under MIT — free to use, modify, and share with attribution.
+
+## Got feedback?
+Open an issue or contact via GitHub. Always open to collaboration or critique.
