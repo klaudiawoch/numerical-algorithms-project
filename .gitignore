@@ -13,12 +13,6 @@ env/
 # Ignore Jupyter Notebook checkpoints (if used)
 .ipynb_checkpoints/
 
-# Ignore image outputs (plots can be regenerated)
-images/*.png
-
-# Ignore report files (often large or generated separately)
-*.pdf
-
 # Ignore temporary or backup files
 *~
 *.bak
